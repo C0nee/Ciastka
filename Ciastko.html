@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <style>
+#div{
+    
+    position:fixed;
+    left: 40%;
+    bottom: 0;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="init()">
+    <div id="div">
+        <p>Na tej stronie wykorzystujemy pliki cookies Prosimy o wyrażenie zgody</p>
+    <button id="btn" onclick="cook()">Zgoda</button></div>
+    <script>
+        function cook()
+        {
+            document.cookie = "cookieAccept: true" 
+            document.getElementById('div').style.display = "none"
+        }
+        function init(){
+            if(document.cookie == "cookieAccept: true"){
+                document.getElementById('div').style.display = "none"
+            }
+            else{
+                document.getElementById('div').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
